@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color:#fff;
+    }
+    form {
+        background-color: #be5a89;
+        background-image: url(bg.jpg);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form h1{
+        text-align: center;
+        background-image: url(pexels-magda-ehlers-pexels-960137.jpg);
+        color: #27b30b;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #27b30b;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .error {
+        color: red;
+        font-size: 14px;
+    }
+    label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+</style>
+</head>
+<body>
+
+<form id="loginForm" onsubmit="return validateForm()">
+    <h1> Registration Form</h1>
+    <label for="FirstName">FirstName:</label>
+    <input type="text" id="FirstName" placeholder="FirstName" required>
+    <label for="LastName">LastName:</label>
+    <input type="text" id="LastName" placeholder="LastName" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Password" required>
+    <label for="confirm password">Confirm password:</label>
+    <input type="password" id=" confirmpassword" placeholder="confirmPassword" required>
+    <label for="Select your Bank">Select your Bank:</label>
+    <select id="Select your Bank">
+        <option value="">Please choose your Bank</option>
+          <option value="SBI">SBI</option>
+          <option value="FEDERAL">FEDERAL</option>
+          <option value="IDFC">IDFC</option>
+          <option value="ICICI">ICICI</option>
+    </select><br><br>
+    <label for="Payment Mode">Payment Mode:</label>
+    <select id="Payment Mode">
+        <option value="">Please choose your Payment Mode</option>
+          <option value="PHONEPE">PHONEPE</option>
+          <option value="GPAY">GPAY</option>
+          <option value="PAYTM">PAYTM</option>
+    </select> <br> <br>
+    <label for="CardNumber">CardNumber:</label>
+    <input type="text" id="CardNumber" placeholder="Card Number" required>
+    <label for="CVV">CVV:</label>
+    <input type="text" id="CVV" placeholder="Enter CVV" required>
+
+    <div id="errorMessages" class="error"></div>
+    <input type="submit" value="Submit">
+
+</form>
+
+<script>
+function validateForm() {
+    var username = document.getElementById("FirstName").value;
+    var username = document.getElementById("LastName").value;
+    var password = document.getElementById("password").value;
+    var confirmpassword = document.getElementById("confirmpassword").value;
+    var creditCardNumber = document.getElementById("CardNumber").value;
+    var CVV = document.getElementById("CVV").value;
+    var errorMessages = document.getElementById("errorMessages");
+    errorMessages.innerHTML = "";
+
+    
+
+    if (FirstName.trim() == '') {
+        errorMessages.innerHTML = "FirstName is required";
+        return false;
+    }
+    if (password.trim() == '') {
+        errorMessages.innerHTML = "Password is required";
+        return false;
+    }
+    if (confirmpassword.trim() == '') {
+        errorMessages.innerHTML = "confirmPassword is required";
+        return false;
+    }
+    return true;
+}
+</script>
+
+</body>
+</html>
